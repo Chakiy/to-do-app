@@ -3,6 +3,10 @@
 @import "base/reset";
 @import "base/fonts";
 
+body {
+  @include font(rgba(255, 255, 255, 0.3), 16px, arial);
+}
+
 .todoApp {
   &_form {
     &_input {
