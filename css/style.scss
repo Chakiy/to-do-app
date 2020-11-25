@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 @import "base/variables";
 @import "base/mixins";
 @import "base/reset";
 @import "base/fonts";
 
 body {
-  @include font(rgba(255, 255, 255, 0.3), 16px, arial);
+  @include font(rgba(255, 255, 255, 0.3), 30px, ("Roboto", sans-serif));
 }
 
-.todoApp {
+sans-serif .todoApp {
   &_form {
     &_input {
     }
