@@ -2,12 +2,16 @@
 @import "base/mixins";
 @import "base/reset";
 @import "base/fonts";
+@import url("../iconmoon/style.css");
 
 body {
-  @include font(rgba(255, 255, 255, 0.3), 24px, ("Roboto", sans-serif));
+  @include font(rgba(255, 255, 255, 0.3), 16px, ("Roboto", sans-serif));
 }
 
 .todoApp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &_form {
     &_input {
     }
@@ -19,6 +23,10 @@ body {
       .text {
       }
       .icon {
+        &_--remove {
+        }
+        &_--check {
+        }
       }
     }
   }
