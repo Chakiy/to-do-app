@@ -222,6 +222,17 @@ body {
   margin: 0px 20px;
   position: relative;
 }
+.todoApp__list__item .icono:first-of-type:after {
+  content: "";
+  background-color: rgba(203, 213, 210, 0.4);
+  position: absolute;
+  width: 1px;
+  height: 40px;
+  bottom: -5px;
+  left: 50px;
+  display: block;
+  pointer-events: none;
+}
 .todoApp__list__item .icono .icon {
   width: 30px;
   height: 30px;
