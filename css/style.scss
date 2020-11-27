@@ -5,24 +5,63 @@
 @import url("../iconmoon/style.css");
 
 body {
-  @include font(rgba(255, 255, 255, 0.3), 16px, ("Roboto", sans-serif));
+  @include font($bodybg, 16px, ("Roboto", sans-serif));
 }
 
 .todoApp {
+  width: 80%;
+  max-width: 540px;
+  margin: 0 auto;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  &_form {
-    &_input {
+
+  &__form {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: $green;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 15px 10px -15px $grey;
+    &__input {
+      color: $white;
+      background-color: rgba(255, 255, 255, 0.3);
+      border: none;
+      border-radius: 10px;
+      border-top-right-radius: 31px;
+      border-bottom-right-radius: 31px;
+      width: 100%;
+      padding: 24.5px;
+      &::placeholder {
+        color: $white;
+        opacity: 0.8;
+        font-size: 16px;
+      }
+      // &--error {
+      //   background-color: red;
+      // }
     }
-    &_button {
+    &__button {
+      position: absolute;
+      right: 13px;
+      top: -23px;
+      .icon {
+        &-add_circle {
+          width: 77px;
+          fill: $white;
+        }
+      }
     }
   }
-  &_list {
-    &_item {
+  &__list {
+    &__item {
       .text {
       }
-      .icon {
+      .icono {
         &_--remove {
         }
         &_--check {
