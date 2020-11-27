@@ -27,7 +27,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 15px 10px -15px $grey;
+    margin-bottom: 10px;
     &__input {
+      outline: none;
       color: $white;
       background-color: rgba(255, 255, 255, 0.3);
       border: none;
@@ -36,6 +38,7 @@ body {
       border-bottom-right-radius: 31px;
       width: 100%;
       padding: 24.5px;
+      padding-right: 80px;
       &::placeholder {
         color: $white;
         opacity: 0.8;
@@ -48,23 +51,91 @@ body {
     &__button {
       position: absolute;
       right: 13px;
-      top: -23px;
+      top: 13px;
+
       .icon {
         &-add_circle {
-          width: 77px;
-          fill: $white;
+          width: 78px;
+          height: 78px;
+          fill: rgba($color: $white, $alpha: 0.9);
+          &:hover {
+            fill: rgba($color: $white, $alpha: 1);
+          }
         }
       }
     }
   }
   &__list {
+    width: 100%;
+    padding: 0px 20px;
     &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $white;
+      margin-top: 10px;
+      box-shadow: 0px 15px 10px -15px $grey;
+      border-radius: 10px;
+      padding: 20px 0px;
+
       .text {
+        margin-right: auto;
+        padding-left: 20px;
       }
       .icono {
-        &_--remove {
+        height: 30px;
+        width: 30px;
+        margin: 0px 20px;
+        position: relative;
+
+        .icon {
+          width: 30px;
+          height: 30px;
+          fill: $grey;
+
+          &-trash {
+          }
         }
-        &_--check {
+        &--remove {
+          .icon {
+            &-trash:hover {
+              fill: red;
+            }
+          }
+        }
+        &--check {
+          .icon {
+            &-checkmark:hover {
+              fill: $green;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.todoApp__list__item--checked {
+  .text {
+    text-decoration: line-through;
+    text-decoration-color: $green;
+  }
+  .icono {
+    &--check {
+      .icon {
+        &-checkmark {
+          fill: white;
+          // stroke: white;
+          // stroke-width: 1px;
+          background-color: $green;
+          border-radius: 50%;
+          &:hover {
+            fill: white;
+            // stroke: white;
+            // stroke-width: 1px;
+            background-color: $green;
+            border-radius: 50%;
+          }
         }
       }
     }
