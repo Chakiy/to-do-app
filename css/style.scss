@@ -83,7 +83,7 @@ body {
       .text {
         margin-right: auto;
         padding-left: 20px;
-        max-width: 300px;
+        max-width: 350px;
       }
       .icono {
         font-size: 28px;
@@ -156,8 +156,22 @@ body {
     }
   }
 }
-// @media only screen and (max-width: 600px) {
-//   body {
-//     background-color: lightblue;
-//   }
-// }
+@media only screen and (max-width: 670px) {
+  .todoApp__list__item .text {
+    max-width: 300px;
+
+    transition: max-width 0.5s;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .todoApp__list__item .text {
+    max-width: 250px;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .todoApp__list__item .text {
+    max-width: 210px;
+  }
+}

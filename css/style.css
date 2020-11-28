@@ -219,7 +219,7 @@ body {
 .todoApp__list__item .text {
   margin-right: auto;
   padding-left: 20px;
-  max-width: 300px;
+  max-width: 350px;
 }
 .todoApp__list__item .icono {
   font-size: 28px;
@@ -277,6 +277,23 @@ body {
 }
 .todoApp__list__item--checked .icono--check:hover {
   color: white;
+}
+
+@media only screen and (max-width: 670px) {
+  .todoApp__list__item .text {
+    max-width: 300px;
+    transition: max-width 0.5s;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .todoApp__list__item .text {
+    max-width: 250px;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .todoApp__list__item .text {
+    max-width: 210px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
