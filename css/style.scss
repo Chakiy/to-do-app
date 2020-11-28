@@ -2,7 +2,7 @@
 @import "base/mixins";
 @import "base/reset";
 @import "base/fonts";
-@import url("../iconmoon/style.css");
+@import "../icomoon/style.css";
 
 body {
   @include font($bodybg, 16px, ("Roboto", sans-serif));
@@ -11,6 +11,7 @@ body {
 .todoApp {
   width: 80%;
   max-width: 540px;
+
   margin: 0 auto;
   margin-top: 25px;
   display: flex;
@@ -34,9 +35,9 @@ body {
       background-color: rgba(255, 255, 255, 0.3);
       border: none;
       border-radius: 10px;
-      border-top-right-radius: 31px;
-      border-bottom-right-radius: 31px;
-      width: 100%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      width: calc(100% - 32px);
       padding: 24.5px;
       padding-right: 80px;
       &::placeholder {
@@ -50,18 +51,19 @@ body {
     }
     &__button {
       position: absolute;
-      right: 13px;
-      top: 13px;
-
-      .icon {
-        &-add_circle {
-          width: 78px;
-          height: 78px;
-          fill: rgba($color: $white, $alpha: 0.9);
-          &:hover {
-            fill: rgba($color: $white, $alpha: 1);
-          }
-        }
+      right: 20px;
+      top: 20px;
+      font-size: 44px;
+      width: 64px;
+      height: 64px;
+      background-color: $white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $green;
+      &:hover {
+        background-color: rgba($color: $white, $alpha: 0.9);
       }
     }
   }
@@ -81,12 +83,16 @@ body {
       .text {
         margin-right: auto;
         padding-left: 20px;
+        max-width: 300px;
       }
       .icono {
-        height: 30px;
-        width: 30px;
+        font-size: 28px;
         margin: 0px 20px;
         position: relative;
+        color: $grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &:first-of-type:after {
           content: "";
@@ -100,26 +106,25 @@ body {
           pointer-events: none;
         }
 
-        .icon {
-          width: 30px;
-          height: 30px;
-          fill: $grey;
-
-          &-trash {
-          }
-        }
         &--remove {
-          .icon {
-            &-trash:hover {
-              fill: red;
-            }
+          // border: 1px solid green;
+          // border-radius: 10px;
+
+          &:hover {
+            color: red;
           }
         }
         &--check {
-          .icon {
-            &-checkmark:hover {
-              fill: $green;
-            }
+          font-size: 20px;
+          background-color: $white;
+          border: 2px solid $grey;
+          border-radius: 50%;
+          width: 29px;
+          height: 29px;
+
+          &:hover {
+            color: $green;
+            border: 2px solid $green;
           }
         }
       }
@@ -133,23 +138,26 @@ body {
     text-decoration-color: $green;
   }
   .icono {
+    border: none;
     &--check {
-      .icon {
-        &-checkmark {
-          fill: white;
-          // stroke: white;
-          // stroke-width: 1px;
-          background-color: $green;
-          border-radius: 50%;
-          &:hover {
-            fill: white;
-            // stroke: white;
-            // stroke-width: 1px;
-            background-color: $green;
-            border-radius: 50%;
-          }
-        }
+      color: $white;
+      background-color: $green;
+      border-radius: 50%;
+      font-size: 20px;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: white;
       }
     }
   }
 }
+// @media only screen and (max-width: 600px) {
+//   body {
+//     background-color: lightblue;
+//   }
+// }

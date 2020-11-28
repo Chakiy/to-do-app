@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("../iconmoon/style.css");
+@import "../icomoon/style.css";
 html,
 body,
 div,
@@ -174,9 +174,9 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
   border: none;
   border-radius: 10px;
-  border-top-right-radius: 31px;
-  border-bottom-right-radius: 31px;
-  width: 100%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: calc(100% - 32px);
   padding: 24.5px;
   padding-right: 80px;
 }
@@ -187,16 +187,20 @@ body {
 }
 .todoApp__form__button {
   position: absolute;
-  right: 13px;
-  top: 13px;
+  right: 20px;
+  top: 20px;
+  font-size: 44px;
+  width: 64px;
+  height: 64px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #19ba99;
 }
-.todoApp__form__button .icon-add_circle {
-  width: 78px;
-  height: 78px;
-  fill: rgba(255, 255, 255, 0.9);
-}
-.todoApp__form__button .icon-add_circle:hover {
-  fill: white;
+.todoApp__form__button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .todoApp__list {
   width: 100%;
@@ -215,12 +219,16 @@ body {
 .todoApp__list__item .text {
   margin-right: auto;
   padding-left: 20px;
+  max-width: 300px;
 }
 .todoApp__list__item .icono {
-  height: 30px;
-  width: 30px;
+  font-size: 28px;
   margin: 0px 20px;
   position: relative;
+  color: #cbd5d2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .todoApp__list__item .icono:first-of-type:after {
   content: "";
@@ -233,31 +241,42 @@ body {
   display: block;
   pointer-events: none;
 }
-.todoApp__list__item .icono .icon {
-  width: 30px;
-  height: 30px;
-  fill: #cbd5d2;
+.todoApp__list__item .icono--remove:hover {
+  color: red;
 }
-.todoApp__list__item .icono--remove .icon-trash:hover {
-  fill: red;
+.todoApp__list__item .icono--check {
+  font-size: 20px;
+  background-color: #fff;
+  border: 2px solid #cbd5d2;
+  border-radius: 50%;
+  width: 29px;
+  height: 29px;
 }
-.todoApp__list__item .icono--check .icon-checkmark:hover {
-  fill: #19ba99;
+.todoApp__list__item .icono--check:hover {
+  color: #19ba99;
+  border: 2px solid #19ba99;
 }
 
 .todoApp__list__item--checked .text {
   text-decoration: line-through;
   text-decoration-color: #19ba99;
 }
-.todoApp__list__item--checked .icono--check .icon-checkmark {
-  fill: white;
-  background-color: #19ba99;
-  border-radius: 50%;
+.todoApp__list__item--checked .icono {
+  border: none;
 }
-.todoApp__list__item--checked .icono--check .icon-checkmark:hover {
-  fill: white;
+.todoApp__list__item--checked .icono--check {
+  color: #fff;
   background-color: #19ba99;
   border-radius: 50%;
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todoApp__list__item--checked .icono--check:hover {
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
