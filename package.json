@@ -1,0 +1,30 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "online to do application full edited http://todo-khachaturt.surge.sh",
+  "main": "index.js",
+  "scripts": {
+    "_comment": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run dev",
+    "dev": "npm-run-all --parallel sass-dev server-dev",
+    "sass-dev": "sass ./src/css/styles.scss ./dist/style.css --watch",
+    "server-dev": "live-server",
+    "build": "npm-run-all --serial clean sass-prod deploy",
+    "clean": "rm -r ./dist/",
+    "sass-prod": "sass ./src/css/styles.scss ./dist/style.css --no-source-map --style=compressed",
+    "deploy": "surge . --domain https://todo-khachaturt.surge.sh",
+    "github": " npm-run-all --serial git-status git-add git-status",
+    "git-status": " git status",
+    "git-add": " git add ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chakiy/to-do-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chakiy/to-do-app/issues"
+  },
+  "homepage": "https://github.com/Chakiy/to-do-app#readme"
+}
